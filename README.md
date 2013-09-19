@@ -1,8 +1,23 @@
 # MiniMediainfo
 
-TODO: Write a gem description
+A Ruby wrapper for mediainfo CLI.
 
 ## Installation
+
+As a prerequisite you will need to have the mediainfo binary installed on your system.
+For example:
+
+OS X:
+
+    brew install mediainfo
+
+Ubuntu:
+
+    sudo add-apt-repository ppa:shiki/mediainfo
+    sudo apt-get update
+    sudo apt-get install mediainfo
+
+
 
 Add this line to your application's Gemfile:
 
@@ -18,7 +33,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    require 'mini_mediainfo'
+    media = MiniMediainfo::Media.new("http://techslides.com/demos/sample-videos/small.mp4")
+    media.introspect
+    media.meta['General']['Format'] # => "MPEG-4"
+    media.meta['General']['Duration'] # => "5s 568ms"
+    media.meta['Audio']['Compression mode'] # => "Lossy"
+
 
 ## Contributing
 

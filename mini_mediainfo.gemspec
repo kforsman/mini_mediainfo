@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["ko.forsman@gmail.com"]
   spec.description   = %q{A Ruby wrapper for mediainfo CLI.}
   spec.summary       = %q{A minimalistic gem for wrapping mediainfo commands and parsing it's output.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/kforsman/mini_mediainfo"
   spec.license       = "MIT"
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }

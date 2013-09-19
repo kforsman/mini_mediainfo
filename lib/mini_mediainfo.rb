@@ -1,4 +1,5 @@
 require "mini_mediainfo/version"
+require "mini_mediainfo/media"
 require 'open3'
 
 module MiniMediainfo

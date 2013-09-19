@@ -1,5 +1,6 @@
-#require "mini_mediainfo/version"
 require 'open3'
+require "net/http"
+require "uri"
 
 module MiniMediainfo
 

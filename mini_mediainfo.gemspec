@@ -7,11 +7,15 @@ Gem::Specification.new do |spec|
   spec.name          = "mini_mediainfo"
   spec.version       = MiniMediainfo::VERSION
   spec.authors       = ["Karl Forsman"]
-  spec.email         = ["kforsman@wurl.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.email         = ["ko.forsman@gmail.com"]
+  spec.description   = %q{A Ruby wrapper for mediainfo CLI.}
+  spec.summary       = %q{A minimalistic gem for wrapping mediainfo commands and parsing it's output.}
   spec.homepage      = ""
   spec.license       = "MIT"
+
+  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "thin"
+  spec.add_development_dependency "sinatra"
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }

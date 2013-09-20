@@ -4,6 +4,7 @@ require "uri"
 
 module MiniMediainfo
 
+  # Class for parsing output from mediainfo
   class Media
 
     attr_reader :uri
@@ -26,7 +27,7 @@ module MiniMediainfo
     end
 
     def introspect()
-      cmd = "mediainfo \"#{@uri}\""
+      cmd = "mediainfo \"#{@uri}\" -f"
       key = ''
       lines = []
       keys = []
@@ -55,7 +56,12 @@ module MiniMediainfo
         end
 
         if (key && key.length > 0) && (media_attrs && media_attrs.length == 2)
-          entries.push([key, media_attrs[0], media_attrs[1]])
+          # Only add the attribute if it does not exist already. When we parse
+          # full output from mediainfo we are only interested in the first
+          # entry that is unformatted and easier to work with
+          unless entries.find {|i| i[0] == key && i[1] == media_attrs[0]}
+            entries.push([key, media_attrs[0], media_attrs[1]])
+          end
         end
       end
 

@@ -37,7 +37,7 @@ Or install it yourself as:
     media = MiniMediainfo::Media.new("http://techslides.com/demos/sample-videos/small.mp4")
     media.introspect
     media.meta['General']['Format'] # => "MPEG-4"
-    media.meta['General']['Duration'] # => "5s 568ms"
+    media.meta['General']['Duration'] # => "12345667"
     media.meta['Audio']['Compression mode'] # => "Lossy"
 
 

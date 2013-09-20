@@ -15,8 +15,8 @@ module MiniMediainfo
           url = URI.parse(uri)
           req = Net::HTTP.new(url.host, url.port)
           res = req.request_head(url.path)
-          if res.code != "200"
-            raise "Error: #{uri} is not accessible"
+          if res.code >= "400"
+            raise "Error: #{uri} is not accessible, status: #{res.code}"
           end
         else
           raise "Error: the file '#{uri}' does not exist"

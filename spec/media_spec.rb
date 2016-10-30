@@ -41,10 +41,10 @@ describe MiniMediainfo::Media do
   end
 
   def should_have_proper_data(meta_data)
-    meta_data.is_a?(Hash).should be_true
+    meta_data.is_a?(Hash).should be true
 
     ['General', 'Audio', 'Video'].each do |k|
-      meta_data.has_key?(k).should be_true
+      meta_data.has_key?(k).should be true
       meta_data[k].size.should > 0
     end
     # test format for a couple of key properties

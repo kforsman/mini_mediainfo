@@ -5,7 +5,7 @@ require 'open3'
 module MiniMediainfo
 
   def self.platform_supported?
-    /(darwin|linux|unix)/ =~ RUBY_PLATFORM
+    %w{darwin linux unix}.any?{|os_string| RUBY_PLATFORM.include?(os_string) }
   end
 
   def self.mediainfo_version

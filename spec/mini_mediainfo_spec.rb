@@ -3,8 +3,8 @@ require 'spec_helper'
 describe MiniMediainfo do
 
   it "should determine if the platform is supported" do
-    subject.respond_to?(:platform_supported?).should be_true
-    subject.platform_supported?.should be_true
+    subject.respond_to?(:platform_supported?).should be true
+    subject.platform_supported?.should be true
   end
 
   it "should get mediainfo version" do

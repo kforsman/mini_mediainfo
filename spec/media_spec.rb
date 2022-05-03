@@ -57,6 +57,6 @@ describe MiniMediainfo::Media do
     expect(meta_data['Video']['Format profile']).to_not be_nil # Main@L3.2
     expect(meta_data['Video']['Bit rate']).to match(number_format) # 1280
     expect(meta_data['Audio']['Bit rate']).to match(number_format) # 1280
-    expect(meta_data['Audio']['Codec']).to_not be_nil # AAC
+    expect(meta_data['Audio']['Format']).to_not be_nil # AAC
   end
 end
